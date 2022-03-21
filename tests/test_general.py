@@ -212,7 +212,7 @@ def test_pytest_html(testdir, cli_args):
         def test_2():
             assert 1 == 2
     """)
-    result = testdir.runpytest('--html=' + str(report), *cli_args)
+    result = testdir.runpytest(f'--html={str(report)}', *cli_args)
     result.assert_outcomes(passed=1, failed=1)
     assert result.ret == 1
     with open(str(report)) as f:

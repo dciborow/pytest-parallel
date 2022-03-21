@@ -30,8 +30,8 @@ def build(c):
 def release(c):
     test(c)
     build(c)
-    c.run('git commit -am {}'.format(version))
-    c.run('git tag {}'.format(version))
+    c.run(f'git commit -am {version}')
+    c.run(f'git tag {version}')
     c.run('git push')
     c.run('git push --tags')
     c.run('twine upload dist/*')

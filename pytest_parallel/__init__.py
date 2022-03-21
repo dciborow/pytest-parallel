@@ -363,7 +363,7 @@ class ParallelRunner(object):
                 time.sleep(.1)
                 continue
 
-            callback_name = 'on_' + event_name
+            callback_name = f'on_{event_name}'
             try:
                 callback = getattr(self, callback_name)
                 callback(**kwargs)
